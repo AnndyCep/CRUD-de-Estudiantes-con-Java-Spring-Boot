@@ -1,0 +1,50 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- Acceder a las pplantillas de thymeleaf-->
+    <head> 
+        <title>Listado de estudiantes </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+              integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-text" th:href="@{/}"> Home </a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <h2>Lista estudiantes</h2>
+            </div>        
+            
+            
+           
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estudiante : ${estudiante}">
+                        <th scope="row" th:text="${estudiante.id_estudiante}"></th>
+                        <td th:text="${estudiante.nombre}"></td>
+                        <td th:text="${estudiante.apellido}"></td>
+                        <td th:text="${estudiante.email}"></td>
+                        <td>
+                            <a> Editar - </a>
+                            <a> Eliminar </a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <a href="url"> Nuevo Estudiante </a>
+        </div>
+    </body>
+</html>
