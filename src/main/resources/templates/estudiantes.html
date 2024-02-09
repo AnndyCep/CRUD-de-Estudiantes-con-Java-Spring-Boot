@@ -37,14 +37,14 @@
                         <td th:text="${listaEstudiante.apellido}"></td>
                         <td th:text="${listaEstudiante.email}"></td>
                         <td>
-                            <a th:href="@{/editar/{id}(id=${listaEstudiante.id_estudiante})}"> Editar - </a>
-                            <a> Eliminar </a>
+                            <a th:href="@{/editar/{id}(id=${listaEstudiante.id_estudiante})}" class="btn btn-info"> Editar  </a>
+                            <a th:href="@{/eliminar/{id}(id=${listaEstudiante.id_estudiante})}" class="btn btn-danger"> Eliminar </a>
                         </td>
                     </tr>
                     
                 </tbody>
             </table>
-            <a href="/nueva"> Nuevo Estudiante </a>
+            <a href="/nueva" class="btn btn-info"> Nuevo Estudiante </a>
         </div>
     </body>
 </html>

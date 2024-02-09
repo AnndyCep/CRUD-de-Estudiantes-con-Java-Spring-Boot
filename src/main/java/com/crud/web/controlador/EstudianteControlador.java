@@ -57,4 +57,10 @@ public class EstudianteControlador {
         servicio.actualizarEstudiante(id, estudiante);
         return "redirect:/";
     }
+    //Eliminar estudiante
+    @GetMapping("/eliminar/{id}")
+    public String eliminarEstudiante(@PathVariable int id){
+        servicio.eliminarEstudiante(id);
+        return "redirect:/";
+    }
 }
