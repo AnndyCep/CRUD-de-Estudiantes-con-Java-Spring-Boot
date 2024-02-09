@@ -1,0 +1,33 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Formulario </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+              integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-text" href="/"> Lista Estudiantes </a>
+        </nav>
+        <br>
+        <div class="container">
+           <div class="row">
+               <div class="col-lg-6 col-md-6 col-sn-6 container justify-content-center card ">
+                   <h2 class="text-center">Registro Estudiantes</h2>
+                   <div class="card-body">
+                       <form th:action="${accion}" th:object="${estudiante}" method="post">
+                           <label> Nombre : <input type="text" th:field="*{nombre}"></label><br><!-- apuntamos al atributo nombre para luego guardar el datos -->
+                           <label> Apellido : <input type="text" th:field="*{apellido}"></label><br>
+                           <label> Email : <input type="text" th:field="*{email}"></label><br>
+                           <button type="submit"> Guardar </button>
+                       </form>
+                   </div>
+               </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
