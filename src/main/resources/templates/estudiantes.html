@@ -37,7 +37,7 @@
                         <td th:text="${listaEstudiante.apellido}"></td>
                         <td th:text="${listaEstudiante.email}"></td>
                         <td>
-                            <a> Editar - </a>
+                            <a th:href="@{/editar/{id}(id=${listaEstudiante.id_estudiante})}"> Editar - </a>
                             <a> Eliminar </a>
                         </td>
                     </tr>
